@@ -40,7 +40,6 @@ class TaskController extends Controller
 
         $tasks = $query->paginate(10);
         
-        // Ubah ini - gunakan 'lists' bukan 'task_lists'
         $lists = \DB::table('lists')->where('user_id', auth()->id())->get();
 
         return Inertia::render('Tasks/Index', [
