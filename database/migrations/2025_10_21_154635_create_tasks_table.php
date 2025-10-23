@@ -18,9 +18,8 @@ return new class extends Migration
         $table->boolean('is_completed')->default(false);
         $table->date('due_date')->nullable();
         
-        // UBAH INI - gunakan 'lists' bukan 'task_lists'
         $table->foreignId('list_id')
-              ->constrained('lists')  // ← PERBAIKAN INI
+              ->constrained('lists')
               ->onDelete('cascade');
               
         $table->timestamps();
