@@ -68,7 +68,6 @@ class ListController extends Controller
      */
     public function update(Request $request, TaskList $list)
 {
-    // ✅ TAMBAHKAN INI - Check authorization
     if ($list->user_id !== auth()->id()) {
         abort(403, 'Unauthorized action.');
     }
@@ -86,7 +85,6 @@ class ListController extends Controller
 
 public function destroy(TaskList $list)
 {
-    // ✅ TAMBAHKAN INI - Check authorization
     if ($list->user_id !== auth()->id()) {
         abort(403, 'Unauthorized action.');
     }
