@@ -22,7 +22,6 @@ class Task extends Model
 
     public function list(): BelongsTo
     {
-        // 🔥 Pastikan foreign key dan model ditulis eksplisit
         return $this->belongsTo(TaskList::class, 'list_id');
     }
 }
