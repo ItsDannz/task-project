@@ -14,13 +14,12 @@ return new class extends Migration
     Schema::create('tasks', function (Blueprint $table) {
         $table->id();
         $table->string('title');
-        $table->text('description')->nullable(); // Ubah ke text jika deskripsi panjang
+        $table->text('description')->nullable();
         $table->boolean('is_completed')->default(false);
         $table->date('due_date')->nullable();
         
-        // Perbaiki constraint
         $table->foreignId('list_id')
-              ->constrained('task_lists') // Tambahkan nama tabel yang benar
+              ->constrained('task_lists')
               ->onDelete('cascade');
         $table->timestamps();
     });
